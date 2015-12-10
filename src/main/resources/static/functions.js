@@ -4,11 +4,13 @@ $(document).ready(function() {
 });
 
 function registerSearch() {
+	console.log("ASDF");
+	console.log($("#c").val());
 	$("#search").submit(function(ev){
 		event.preventDefault();
-		$.get($(this).attr('action'), {q: $("#q").val()}, function(data) {
+		$.get($(this).attr('action'), {q: $("#q").val(), c: $("#c").val()}, function(data) {
 			$("#resultsBlock").html(Mustache.render(template, data));
-		});	
+		});
 	});
 }
 

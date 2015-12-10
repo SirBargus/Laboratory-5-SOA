@@ -27,10 +27,10 @@ public class SearchController {
 
     @RequestMapping(value="/search")
     @ResponseBody
-    public Object search(@RequestParam("q") String q, @RequestParam("count") Integer count) {
+    public Object search(@RequestParam("q") String q, @RequestParam("c") Integer c) {
     	Map<String, Object> h = new HashMap<String, Object>();
     	h.put("CamelTwitterKeywords", q);
-    	h.put("CamelTwitterCount", count);
+    	h.put("CamelTwitterCount", c);
     	return producerTemplate.requestBodyAndHeaders("direct:search", "", h);
     }
 }
