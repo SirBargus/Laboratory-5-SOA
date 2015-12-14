@@ -1,42 +1,80 @@
-# Web Engineering 2015-2016 / SOA
-Please, go to the [Wiki](https://github.com/UNIZAR-30246-WebEngineering/Laboratory-5-SOA/wiki) in order to get the instructions for this assignment.
+# Web Engineering 2015-2016 /Node.js
+[![Build Status](https://travis-ci.org/SirBargus/Laboratory-4-WebSockets.svg?branch=node)](https://travis-ci.org/SirBargus/Laboratory-4-WebSockets.svg?branch=node)
+
+A simple transformation of Laboratory-4 into Node.js with a simple html + javascript frontend.
+
+## What is ...?
+### Node.js
+[Node.js](https://nodejs.org/en/) is an open-source, cross-platform runtime environment for developing server-side web applications. It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
+### Node Twitter
+Node twitter is a simple framework for use api twitter in node apps.
+
+## Install Node.js and NPM
+### Ubuntu
+
+On the latest version of Ubuntu, you can simply:
+
+```
+$> sudo apt-get install nodejs nodejs-dev npm
+```
+
+On earlier versions, you might need to update your repository:
+
+```
+$> sudo apt-get install python-software-properties
+$> sudo add-apt-repository ppa:chris-lea/node.js
+$> sudo apt-get update
+$> sudo apt-get install nodejs nodejs-dev npm
+```
+
+### OS X
+As simple as:
+
+```
+$> brew install node npm
+```
+
+### Windows
+Since Windows package managers are less common, I recommend just downloading the [Windows binary](https://nodejs.org/download/).
 
 
-User name | NIA |Repository|Proposal|Score
-----------|-----|----------|--------|-----
-UNIZAR-30246-WebEngineering |30246 | [repo](https://github.com/UNIZAR-30246-WebEngineering/Laboratory-5-SOA)
-AlejandroDiesteCortes | 541892 | [repo](https://github.com/AlejandroDiesteCortes/Laboratory-5-SOA)
-Cristian Román |646564
-Javier Beltran Jorba | 532581 | [repo](https://github.com/MrJavo94/Laboratory-5-SOA)
-Marcos Canales Mayo | 467716 | [repo](https://github.com/MarcosCM/Laboratory-5-SOA)
-Jorge Cáncer Gil | 646122 | [repo](https://github.com/jorcox/Laboratory-5-SOA)
-Iñigo Alonso Ruiz | 665959 | [repo](https://github.com/Shathe/Laboratory-5-SOA)
-Ismael Rodríguez Hernández | 587429 | [repo](https://github.com/ismaro3/Laboratory-5-SOA)
-Jorge Martinez Lascorz | 571735 | [repo](https://github.com/JorgeCoke/Laboratory-5-SOA)
-David Nicuesa Aranda | 653224 | [repo](https://github.com/Nicu1309/Laboratory-5-SOA)
-Eduardo Ibanez | 528074 | [repo](https://github.com/EduIbanez/Laboratory-5-SOA)
-Sergio Soro Miranda | 671250 | [repo](https://github.com/teruyi/Laboratory-5-SOA)
-Alberto Álvarez Aldea | 681687 | [repo](https://github.com/albert17/Laboratory-5-SOA)
-Oscar Clemente Pedrico | 530162| [repo](https://github.com/OscarClemente/Laboratory-5-SOA)
-Iñigo Gascón Royo | 685215
-Adrian Susinos Moreno | 650220 | [repo](https://github.com/ader9/Laboratory-5-SOA)
-Santiago Gil Begué | 683482 | [repo](https://github.com/Santi-7/Laboratory-5-SOA)
-Carlos Escuín Blasco | 545003 | [repo](https://github.com/xarlieskin/Laboratory-5-SOA)
-Alberto Revel | 628704
-Raul Piracés Alastuey | 490790 | [repo](https://github.com/piraces/Laboratory-5-SOA)
-Adrian Moreno Jimeno | 631537
-Alberto Sabater Bailón | 546297 | [repo](https://github.com/asabater94/Laboratory-5-SOA) | UI and search functionalities improved | :gift:
-Agustin Navarro Torres | 587570|[repo](https://github.com/SirBargus/Laboratory-5-SOA)|Transform into Node.js and send tweets
-Alejandro Solanas Bonilla | 647647
-Christian García Artero | 597578
-Luis Jesus Pellicer | 520256 | [repo](https://github.com/luisjesuspellicer/Laboratory-5-SOA)
-Marcos Ruiz García | 648045
-Óscar Meler Murillo | 608919
-Aron Collados Torres | 626558
-Diego Sánchez Castillo | 628279
-Rubén Gabás Celimendiz | 590738
-Daniel Forcén Esteban | 558471
-Ramón José Arellano Bitrián | 594040
-Daniel Uroz | 545338
-Jorge Berdún Udina | 591454
-Guillermo Pérez García | 610382 | [repo](https://github.com/guillepg/Laboratory-5-SOA)
+### Other Linux distributions or more info
+Just see [this](https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager).
+
+## How to run?
+### Add your keys
+Change the file config.json with your api keys.
+
+### Install dependencies
+To install dependencies with npm:
+
+```
+$> npm install
+```
+
+### Run server
+
+To run application:
+
+```
+$> node app.js
+```
+Your app should now be running on ```http://localhost:8080```
+
+## The app's structure
+This is a very simple app, so you should be able to understand it with the code and it's comment. This is a little explination about the app's structure:
+
+```
+package.json (NPM configuration)
+app.js (Prepare the server and lunch it)
+rout.js (Server logic)
+conf.json (App's config.)
+public
+	|-index.html (Frontend: HTML + Angularjs)
+```
+## Want to learn more?
+If you want to know more about Node.js check this:
+
+1. [Planet Node.js](http://www.planetnodejs.com)
+2. [Node.js](https://nodejs.org/en/)
+3. [reddit/r/node](https://www.reddit.com/r/node/)

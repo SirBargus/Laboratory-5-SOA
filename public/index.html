@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app-web">
+<head>
+    <title>Cliente MVC Twitter</title>
+    <meta content="charset=UTF-8" />
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+</head>
+<body ng-controller="app-controller">
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <p class="navbar-brand">Cliente MVC Twitter</p>
+        </div>
+    </nav>
+    <div class="container">
+    <!-- Formulario principal -->
+        <form>
+            <div class="row">
+                <input type="text" class="form-control" ng-model="q"
+                    placeholder="Escribe algo que quieras buscar"/>
+                <input type="number" class="form-control" ng-model="c"
+                    placeholder="Número de resultados"/>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <button ng-click="search()" class="btn btn-default center-block">Buscar</button>
+            </div>
+        </form>
+        <div class="row">&nbsp;</div>
+        <!-- Resultados -->
+        <div ng-repeat="tw in tws">
+            <div class="row panel panel-default">
+                <div class="panel-heading">
+                    <div>
+                    <a href="https://twiter.com/{{tw.user.screenName}}" target="_blank"><b>{{tw.user.screen_name}}</b></a>
+
+                    <div class="pull-right">
+                        Followers count: {{tw.user.followers_count}}
+                    </div>
+                </div>
+                </div>
+            <div class="panel-body">{{tw.text}}</div>
+        </div>
+        </div>
+        <!-- Send tweet -->
+        <div class="container">
+            <!-- Formulario principal -->
+            <form>
+                <div class="row">
+                    <input type="text" class="form-control" ng-model="msg"
+                        placeholder="Tweet to send"/>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <button ng-click="sendTweet()" class="btn btn-default center-block">Send</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+<script>
+var app = angular.module('app-web', []);
+
+app.controller("app-controller", ['$scope', '$http', function($scope, $http){
+
+	$scope.search = function(){
+		$http({url:'/search', method: "GET", params: {q: $scope.q, c: $scope.c}})
+			.success(function(data){
+                $scope.tws = data;
+			});
+	}
+    $scope.sendTweet = function(){
+        $http({url:'/sendTweet', method: "GET", params: {msg: $scope.msg}})
+            .success(function(data){
+                alert("Tweet enviado");
+            })
+            .error(function(data){});
+    }
+}]);
+
+</script>
