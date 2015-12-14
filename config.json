@@ -1,8 +1,8 @@
 {
     "client":{
-        "consumer_key": "tqAZMd7uSOZUCnrsq6GlZDywt",
-        "consumer_secret": "2IDPP0LEbYQipPhBUbpvOT7ErabS3VZK3IGkXZpBCIYlttEQnf",
-        "access_token_key": "317670995-PsJDgKiDN95YEKf7lP1BM1qeXfXOJPGME3HOHc46",
-        "access_token_secret": "znacshVKo4gqt7tL9mZVaK5SR5VUYUvwfIPNzaSuwGPEz"
+        "consumer_key": "",
+        "consumer_secret": "",
+        "access_token_key": "",
+        "access_token_secret": ""
     }
 }
